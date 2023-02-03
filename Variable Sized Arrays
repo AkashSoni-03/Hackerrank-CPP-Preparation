@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int r,c,s=0;
+    //r is for size of array
+    cin>>r>>c;
+    int *arr[r];//arr pointer created which will stores another arrays as a input
+    while(r--)
+    {
+        int num;
+        cin>>num;//num is for size of 0th and so on... position of array element
+        arr[s] = new int[num];//here as s=0, we are creating new array that position of size num
+       for(int i=0; i<num;i++)
+        {
+            cin>>arr[s][i];//to take input at 0th row and 0th column and so on...
+        } 
+        s++;
+    }
+    while(c--)//c is for number of queries to be executed
+    {
+        int a, b;
+        cin>>a>>b;//getting access element positions from user
+        cout<<arr[a][b]<<endl;
+    }
+    return 0;
+}
